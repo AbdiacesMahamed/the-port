@@ -1,0 +1,153 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+
+header{
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+    position: relative;
+    z-index: -1;
+}
+
+body{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* nav */
+nav{
+    height: 5vh;
+    width: 100vw;
+    background-color: turquoise;
+    position: -webkit-sticky;
+    position: relative , sticky;
+    top: 0;
+
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    position: absolute;
+    right: 5%;
+    justify-content: space-between;
+    width: 20%;
+    top: 1.2vh;
+}
+
+ul a{
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+/* Page content */
+.content {
+    padding: 16px;
+  }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+    padding-top: 60px;
+}
+  
+
+/* name */
+.name-box{
+    position: absolute;
+    left: 45%;
+    top: 40%;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.first-name{
+    display: block;
+    margin: 10px;
+}
+
+.last-name{
+    display: block;
+    margin: 10px;
+}
+
+/* project button */
+
+.projects-btn{
+    position: relative;
+    padding: 12px;
+    border-radius: 100px;
+    background-color: white;
+    border: none;
+    text-transform: capitalize;
+}
+
+.projects-btn::after{
+    content: "";
+    position: absolute;
+    padding:12px;
+    border-radius: 100px;
+    background-color: white;
+    border: none;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    left: 0%;
+    bottom: 0%;
+    z-index: -1;
+    transition: all 1s;
+}
+
+
+.projects-btn:hover::after{
+    transform: scale(1.5);
+    animation: disappear 1.5s forwards;
+}
+
+
+@keyframes disappear{
+    0%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+/* projects */
+
+.projects-section{
+    height: 100vh;
+    width: 100%;
+    background-color: violet;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.project{
+    background-color: white;
+    height: 70%;
+    width: 60%;
+    margin-top: 75px;
+    margin-left: 100px;
+    transition: 1s;
+}
+
+.project:hover{
+    transform: scale(1.1);
+}
+
+
+
